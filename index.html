@@ -65,9 +65,23 @@
     <section class="slide">
         <h2>Backbone.js - </h2>
         <ul>
-            <li>Нет основного класса приложения</li>
+            <li>Утечки памяти</li>
+            <li>Нет определенной структуры приложения</li>
+            <li>Очень много кода</li>
             <li>Нет поддержки модулей из коробки</li>
             <li>Нет поддержки слоев (header/footer/sidebar/content/etc..)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Marionettejs </h2>
+        <ul>
+            <li>Составная библиотека для упрощения разработки крупномасштабных приложений</li>
+            <li>Представляет набор общих паттернов проектирования и реализации</li>
+            <li>Сокращает объем стандартного кода благодаря типам представлений</li>
+            <li>Содержит вложенные представления</li>
+            <li>Управляет памятью</li>
+            <li>Объединяет событийную архитектуру и агрегатор событий</li>
         </ul>
     </section>
 
@@ -116,11 +130,16 @@
         </style>
     </section>
 
-    <section class="slide" id="app-router">
+    <section class="slide" id="app-router" style="padding-top: 44px">
         <h2>Controller - router</h2>
         <div>
             <pre>
-                <code>controller = require('./controller');</code>
+                <code>var controller = {</code>
+                <code>  start: function () { ...</code>
+                <code>  routeItemList: function () { ...</code>
+                <code>  routeItem: function () { ...</code>
+                <code>};</code>
+                <code>&nbsp;</code>
                 <code>Router = Marionette.AppRouter.extend({</code>
                 <code>  appRoutes: {</code>
                 <code>    "": "start",</code>
@@ -134,6 +153,10 @@
         <style>
             #picture h2 {
                 color:#FFF;
+            }
+
+            #app-router code {
+                line-height: 1.4;
             }
         </style>
     </section>
@@ -153,7 +176,7 @@
 
     <section class="slide" id="region-example">
         <h2 style="margin-bottom: 10px;">
-            Showing a view in a region
+            region - представление
         </h2>
         <img style="top: 62%;" src="docs/img/region_example.jpg" alt="" class="cover">
 
@@ -165,7 +188,10 @@
     </section>
 
     <section class="slide" id="app-regions">
-        <h2>Showing a view in a region</h2>
+        <h2>region - представление</h2>
+        <ul>
+            <li>Предназначенное для управления жизненным циклом других представлений</li>
+        </ul>
         <div>
             <pre>
                 <code>var myView = new MyView();</code>
@@ -181,6 +207,11 @@
             #picture h2 {
                 color:#FFF;
             }
+
+            #app-regions code {
+                line-height: 1.6;
+            }
+
         </style>
     </section>
 
